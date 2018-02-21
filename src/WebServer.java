@@ -62,7 +62,6 @@ class HttpRequest implements Runnable {
         File file = null;
         
         try {
-            
             /* Check to see if we can grab the file, if not we throw 'FileNotFoundException'. */
             if (tokenizedCommand.hasMoreElements() && tokenizedCommand.nextToken().equals("GET")) {
                 
@@ -78,7 +77,7 @@ class HttpRequest implements Runnable {
                     fileName = fileRequested;
                 }
                 
-                
+                /* Check to see if document_root is our local dir, or non-local. */
                 if (this.path.equals("/")) {
                     /* Add a '.' only to a file path (non-index.html) so that when we check whether the file exists
                      it is a valid file.
